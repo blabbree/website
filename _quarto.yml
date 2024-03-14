@@ -4,7 +4,6 @@ project:
 
 website:
   title: "Brandon P. Labbree"
-  cookie-consent: false
   navbar:
     left:
       - href: index.qmd
