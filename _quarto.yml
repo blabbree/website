@@ -4,6 +4,7 @@ project:
 
 website:
   title: "Brandon P. Labbree"
+  cookie-consent: false
   navbar:
     left:
       - href: index.qmd
@@ -17,14 +18,14 @@ website:
         href: https://twitter.com/blabbree
       - icon: mastodon
         href: https://tech.lgbt/@blabbree
-      - icon: at
+      - text: Bsky
         href: https://bsky.app/profile/blabbree.bsky.social
 
 format:
   html:
-    theme: 
-      light: Yeti
-      dark: Lux
+    # template: jolla 
+      # light: Yeti
+      # dark: Lux
     css: styles.css
     toc: true
 

@@ -1,9 +1,16 @@
 ---
 title: "Brandon P. Labbree"
+email-obfuscation: javascript
 ---
 
 
+# **WORK IN PROGRESS**{.personalheading}
 
-# **WELCOME TO MY PAGE** {.personalheading}
+<!-- :::{.hidden} -->
+
+## **WELCOME TO MY PAGE** {.personalheading}
 
 ![](img/png.png){fig-align="center"}
+
+Brandon Labbree is the Research Lab Manager for the BioSocial Methods Collaborative team, joining in Fall 2021. His interests lie in how people make decisions, evaluations, and judgments and the ways such are impacted by their environments, as well as how they impact behavior. On any given day in the Collaborative, he could be found working on a wide range of tasks, such as helping to develop protocols, setting up the lab for upcoming appointments, programming or testing new code for data cleaning and management, assisting others with their code, to even coming up workarounds for technical issues that might arise. No two days are the same at the Collaborative!
+<!-- ::: -->
