@@ -19,6 +19,9 @@ website:
         href: https://tech.lgbt/@blabbree
       - text: Bsky
         href: https://bsky.app/profile/blabbree.bsky.social
+      - text: "{{< ai google-scholar >}}"
+        href: https://scholar.google.com/citations?user=WuRKHzAAAAAJ&hl=en
+        
 
 format:
   html:
