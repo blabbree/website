@@ -1,18 +1,18 @@
 ---
 title: "Brandon P. Labbree's CV"
+author: Brandon P. Labbree
 date: "`r Sys.Date()`"
 params:
   pdf_mode:
     value: false
   cache_data:
     value: true
-# output:
-#   pagedown::html_resume:
-#     css: ['dd_cv.css', 'resume']
-#     self_contained: true
+output:
+  pagedown::html_resume:
+    css: ['dd_cv.css', 'resume']
+    self_contained: true
 ---
-```{r}
-#| include = FALSE
+```{r, include=FALSE}
 knitr::opts_chunk$set(
   results='asis', 
   echo = FALSE
@@ -60,67 +60,62 @@ if(params$pdf_mode) {
 ```
 
 
-<!-- Aside -->
-<!-- ================================================================================ -->
+Aside
+================================================================================
 
-<!-- ```{r} -->
-<!-- #| eval = FALSE -->
-<!-- # Build interactive network of positions colored by section -->
-<!-- # and connected if they occurred in the same year -->
-<!-- if(params$pdf_mode == FALSE){ -->
-<!-- datadrivencv::build_network_logo(CV$entries_data)} -->
-<!-- ``` -->
+```{r eval=FALSE}
+# Build interactive network of positions colored by section
+# and connected if they occurred in the same year
+if(params$pdf_mode == FALSE){
+datadrivencv::build_network_logo(CV$entries_data)}
+```
 
 
-<!-- ```{r} -->
-<!-- if(params$pdf_mode){ -->
-<!--   cat("View this CV online with links at ",urlString) -->
-<!-- } else { -->
-<!--   cat("[<i class='fas fa-download'></i> Download a PDF of this CV](",urlString,")") -->
-<!-- } -->
-<!-- ``` -->
+```{r}
+if(params$pdf_mode){
+  cat("View this CV online with links at ",urlString)
+} else {
+  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](",urlString,")")
+}
+```
 
-<!-- **Contact** {#contact} -->
-<!-- -------------------------------------------------------------------------------- -->
+**Contact** {#contact}
+--------------------------------------------------------------------------------
 
-<!-- ## Contact {.sidebar} -->
-
-<!-- ```{r} -->
-<!-- CV %>% print_contact_info() -->
-<!-- ``` -->
+```{r}
+CV %>% print_contact_info()
+```
 
 
 
 
 
-<!-- Disclaimer {#disclaimer} -->
-<!-- -------------------------------------------------------------------------------- -->
+Disclaimer {#disclaimer}
+--------------------------------------------------------------------------------
 
-<!-- Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). -->
+Made with the R package [**pagedown**](https://github.com/rstudio/pagedown).
 
-<!-- The source code is available [on github.com/blabbree/CV](https://github.com/blabbree/CV). -->
+The source code is available [on github.com/blabbree/CV](https://github.com/blabbree/CV).
 
-<!-- Last updated on `r Sys.Date()`. -->
+Last updated on `r Sys.Date()`.
 
 
 
-<!-- Main -->
-<!-- ================================================================================ -->
+Main
+================================================================================
+
+Brandon P. Labbree {#title}
+--------------------------------------------------------------------------------
 
 _**`r format(Sys.time(), '%B %d, %Y %I:%M:%S %p')`**_
 
-<!-- ```{r} -->
-<!-- # # Note the special double pipe so we modify the CV object in place -->
-<!--  CV %<>% print_text_block("intro") -->
-<!-- ``` -->
+```{r}
+
+# Note the special double pipe so we modify the CV object in place
+CV %<>% print_text_block("intro") 
+```
 
 
-BioSocial Methods Collaborative  
-Research Center for Group Dynamics  
-Institute for Social Research  
-University of Michigan  
-426 Thompson Street  
-Ann Arbor, Michigan 48104  
 
 **Education** {data-icon=graduation-cap data-concise=true}
 --------------------------------------------------------------------------------
@@ -275,9 +270,9 @@ CV %>% print_skill_bars()
 
 \pagebreak
 
-<!-- References {data-icon=users} -->
-<!-- -------------------------------------------------------------------------------- -->
+References {data-icon=users}
+--------------------------------------------------------------------------------
 
-<!-- ```{r} -->
-<!-- CV %<>% print_references() -->
-<!-- ``` -->
+```{r}
+CV %<>% print_references()
+```

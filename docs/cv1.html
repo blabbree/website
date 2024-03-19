@@ -6,7 +6,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Brandon P. Labbree">
 <meta name="dcterms.date" content="2024-03-19">
 
 <title>Brandon P. Labbree - Brandon P. Labbree’s CV</title>
@@ -153,11 +152,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#aside" id="toc-aside" class="nav-link active" data-scroll-target="#aside">Aside</a>
-  <ul class="collapse">
-  <li><a href="#contact" id="toc-contact" class="nav-link" data-scroll-target="#contact"><strong>Contact</strong></a></li>
-  <li><a href="#title" id="toc-title" class="nav-link" data-scroll-target="#title">Brandon P. Labbree</a></li>
-  <li><a href="#education" id="toc-education" class="nav-link" data-scroll-target="#education"><strong>Education</strong></a>
+  <li><a href="#education" id="toc-education" class="nav-link active" data-scroll-target="#education"><strong>Education</strong></a>
   <ul class="collapse">
   <li><a href="#m.a.-psychology" id="toc-m.a.-psychology" class="nav-link" data-scroll-target="#m.a.-psychology">M.A., Psychology</a></li>
   <li><a href="#b.a.-psychology-sociology-minor-childhood-studieswomen-gender-studies" id="toc-b.a.-psychology-sociology-minor-childhood-studieswomen-gender-studies" class="nav-link" data-scroll-target="#b.a.-psychology-sociology-minor-childhood-studieswomen-gender-studies">B.A., Psychology, Sociology (minor Childhood Studies/Women &amp; Gender Studies)</a></li>
@@ -218,15 +213,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#aspssc-student-research-awards-reviewer" id="toc-aspssc-student-research-awards-reviewer" class="nav-link" data-scroll-target="#aspssc-student-research-awards-reviewer">(ASPSSC) Student Research Awards Reviewer</a></li>
   </ul></li>
   <li><a href="#skills" id="toc-skills" class="nav-link" data-scroll-target="#skills"><strong>Technical and Research Skills</strong></a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a>
-  <ul class="collapse">
-  <li><a href="#alicia-g.-carmichael" id="toc-alicia-g.-carmichael" class="nav-link" data-scroll-target="#alicia-g.-carmichael">Alicia G. Carmichael</a></li>
-  <li><a href="#richard-gonzalez" id="toc-richard-gonzalez" class="nav-link" data-scroll-target="#richard-gonzalez">Richard Gonzalez</a></li>
-  <li><a href="#alexander-todorov" id="toc-alexander-todorov" class="nav-link" data-scroll-target="#alexander-todorov">Alexander Todorov</a></li>
-  <li><a href="#wayne-chan" id="toc-wayne-chan" class="nav-link" data-scroll-target="#wayne-chan">Wayne Chan</a></li>
-  <li><a href="#stefan-uddenberg" id="toc-stefan-uddenberg" class="nav-link" data-scroll-target="#stefan-uddenberg">Stefan Uddenberg</a></li>
-  </ul></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -242,12 +228,6 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Brandon P. Labbree </p>
-          </div>
-  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
@@ -264,20 +244,28 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="aside" class="level1">
-<h1>Aside</h1>
-<p><a href="https://github.com/blabbree/CV/tree/main/PDF/Labbree_CV_20240319.pdf"><i class="fas fa-download"></i> Download a PDF of this CV</a></p>
-<section id="contact" class="level2">
-<h2 class="anchored" data-anchor-id="contact"><strong>Contact</strong></h2>
-<ul>
-<li><i class="fa fa-envelope"></i> blabbree@gmail.com</li>
-<li><i class="fab fa-twitter"></i> <a href="http://twitter.com/blabbree">blabbree </a></li>
-<li><i class="fab fa-github"></i> <a href="http://github.com/blabbree">github.com/blabbree </a></li>
-<li><i class="fab fa-linkedin"></i> <a href="http://linkedin.com/in/blabbree/">linkedin.com/in/blabbree/ </a></li>
-<li><i class="fab fa-mastodon"></i> <a href="http://tech.lgbt/@blabbree"><span class="citation" data-cites="blabbree">@blabbree</span><span class="citation" data-cites="tech.lgbt">@tech.lgbt</span> </a></li>
-<li><i class="fa fa-id-badge"></i> <a href="http://orcid.org/0000-0002-5893-4469">orcid.org/0000-0002-5893-4469 </a></li>
-<li><i class="fa fa-link"></i> <a href="https://osf.io/vztx8/">osf.io/vztx8/</a></li>
-</ul>
+<!-- Aside -->
+<!-- ================================================================================ -->
+<!-- ```{r} -->
+<!-- #| eval = FALSE -->
+<!-- # Build interactive network of positions colored by section -->
+<!-- # and connected if they occurred in the same year -->
+<!-- if(params$pdf_mode == FALSE){ -->
+<!-- datadrivencv::build_network_logo(CV$entries_data)} -->
+<!-- ``` -->
+<!-- ```{r} -->
+<!-- if(params$pdf_mode){ -->
+<!--   cat("View this CV online with links at ",urlString) -->
+<!-- } else { -->
+<!--   cat("[<i class='fas fa-download'></i> Download a PDF of this CV](",urlString,")") -->
+<!-- } -->
+<!-- ``` -->
+<!-- **Contact** {#contact} -->
+<!-- -------------------------------------------------------------------------------- -->
+<!-- ## Contact {.sidebar} -->
+<!-- ```{r} -->
+<!-- CV %>% print_contact_info() -->
+<!-- ``` -->
 <!-- Disclaimer {#disclaimer} -->
 <!-- -------------------------------------------------------------------------------- -->
 <!-- Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). -->
@@ -285,12 +273,16 @@ ul.task-list li input[type="checkbox"] {
 <!-- Last updated on 2024-03-19. -->
 <!-- Main -->
 <!-- ================================================================================ -->
-</section>
-<section id="title" class="level2">
-<h2 class="anchored" data-anchor-id="title">Brandon P. Labbree</h2>
-<p><em><strong>March 19, 2024 06:03:40 PM</strong></em></p>
-<p>BioSocial Methods Collaborative | Research Center for Group Dynamics | Institute for Social Research | University of Michigan | 426 Thompson Street | Ann Arbor, Michigan 48104</p>
-</section>
+<p><em><strong>March 19, 2024 06:35:38 PM</strong></em></p>
+<!-- ```{r} -->
+<!-- # # Note the special double pipe so we modify the CV object in place -->
+<!--  CV %<>% print_text_block("intro") -->
+<!-- ``` -->
+<p>BioSocial Methods Collaborative<br>
+Research Center for Group Dynamics-Institute for Social Research<br>
+University of Michigan<br>
+426 Thompson Street<br>
+Ann Arbor, Michigan 48104</p>
 <section id="education" class="level2" data-icon="graduation-cap" data-concise="true">
 <h2 data-icon="graduation-cap" data-concise="true" class="anchored" data-anchor-id="education"><strong>Education</strong></h2>
 <section id="m.a.-psychology" class="level3">
@@ -756,57 +748,13 @@ LaTeX
 PsychoPy
 </div>
 <div style="page-break-after: always;"></div>
-</section>
-<section id="references" class="level2" data-icon="users">
-<h2 data-icon="users" class="anchored" data-anchor-id="references">References</h2>
-<section id="alicia-g.-carmichael" class="level3">
-<h3 class="anchored" data-anchor-id="alicia-g.-carmichael">Alicia G. Carmichael</h3>
-<p>Research Process Director</p>
-<p>BioSocial Methods Collaborative, Research Center for Group Dynamics, Institute for Social Research, University of Michigan, Ann Arbor, Michigan 48104</p>
-<p>&nbsp;</p>
-<p>almagior@umich.edu</p>
-<p>734-764-4265</p>
-<p>Research Process Director of the BioSocial Methods Collaborative at the Institute for Social Research at the University of Michigan. She oversaw the day-to-day research activities of the lab and was my direct supervisor</p>
-</section>
-<section id="richard-gonzalez" class="level3">
-<h3 class="anchored" data-anchor-id="richard-gonzalez">Richard Gonzalez</h3>
-<p>Amos N. Tversky Collegiate Professor of Psychology and Statistics; Center Director for Research Center for Group Dynamics;Director for BioSocial Methods Collaborative</p>
-<p>Research Center for Group Dynamics, Institute for Social Research, University of Michigan, Ann Arbor, Michigan 48104</p>
-<p>&nbsp;</p>
-<p>gonzo@umich.edu</p>
-<p>734-647-6785</p>
-<p>Center Director ofr the Research Center for Group Dynamics and Principal Investigator for the BioSocial Methods Collaborative at the Institute for Social Research at the University of Michigan.</p>
-</section>
-<section id="alexander-todorov" class="level3">
-<h3 class="anchored" data-anchor-id="alexander-todorov">Alexander Todorov</h3>
-<p>Professor of Behavioral Science and Rosett Faculty Fellow</p>
-<p>Booth School of Business, University of Chicago, Chicago, IL 60637</p>
-<p>&nbsp;</p>
-<p>alexander.todorov@chicagobooth.edu</p>
-<p>646-812-3093</p>
-<p>The principal investigator of the lab worked I worked in from 2017-2020, but has since moved tothe University of Chicago from Princeton University</p>
-</section>
-<section id="wayne-chan" class="level3">
-<h3 class="anchored" data-anchor-id="wayne-chan">Wayne Chan</h3>
-<p>Research Scientist III</p>
-<p>Covered California, California Department of Health Care Services, Sacramento, CA 95815</p>
-<p>&nbsp;</p>
-<p>ucbwayne@gmail.com</p>
-<p>925-388-6369</p>
-<p>My master’s thesis advisor and principal investigator of lab that volunteered in during Senior year of undergrad program and throughout Master’s program.</p>
-</section>
-<section id="stefan-uddenberg" class="level3">
-<h3 class="anchored" data-anchor-id="stefan-uddenberg">Stefan Uddenberg</h3>
-<p>Principal Researcher</p>
-<p>Booth School of Business, University of Chicago, Chicago, IL 60637</p>
-<p>&nbsp;</p>
-<p>stefan.uddenberg@chicagobooth.edu</p>
-<p>323-207-0314</p>
-<p>A postdoctoral fellow with whom I worked alongside from 2018-2020. He as moved to the University of Chicago from Princeton University. Starting Fall 2024, he will be a Assistant Professor of Psychology at University of Illinois Urbana-Champaign.</p>
+<!-- References {data-icon=users} -->
+<!-- -------------------------------------------------------------------------------- -->
+<!-- ```{r} -->
+<!-- CV %<>% print_references() -->
+<!-- ``` -->
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
