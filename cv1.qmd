@@ -1,0 +1,280 @@
+---
+title: "Brandon P. Labbree's CV"
+author: Brandon P. Labbree
+date: "`r Sys.Date()`"
+params:
+  pdf_mode:
+    value: false
+  cache_data:
+    value: true
+# output:
+#   pagedown::html_resume:
+#     css: ['dd_cv.css', 'resume']
+#     self_contained: true
+---
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  results='asis', 
+  echo = FALSE
+)
+
+library(pacman)
+
+# library(tidyverse)
+# library(icons)
+# library(magrittr)
+
+
+source("cv_printing_functions.r")
+# remotes::install_github("mitchelloharawild/icons")
+# devtools::install_github("nstrayer/datadrivencv")
+ p_load(magrittr, datadrivencv,icons, tidyverse)
+
+
+# Read in all data and initialize a CV printer object
+CV <- create_CV_object(
+  data_location = "https://docs.google.com/spreadsheets/d/1Mf3ChHQY-MTwWxH8oXrBvGDjAcl6kgyVzm9eOyuGAV0/edit?usp=sharing",  
+  pdf_mode = params$pdf_mode
+)
+
+current_date <- Sys.time()
+current_date <- format(current_date,format='%Y%m%d')
+
+basename <- paste0("Labbree_CV_",current_date, sep="")
+
+urlString <- paste("https://github.com/blabbree/CV/tree/main/PDF/",basename,".pdf",sep="")
+
+```
+
+
+```{r}
+# When in pdf export mode the little dots are unaligned, so fix that with some conditional CSS.
+if(params$pdf_mode) {
+    cat("
+<style>
+:root{
+  --decorator-outer-offset-left: -6.5px;
+}
+</style>")
+}
+```
+
+
+Aside
+================================================================================
+
+```{r}
+#| eval = FALSE
+# Build interactive network of positions colored by section
+# and connected if they occurred in the same year
+if(params$pdf_mode == FALSE){
+datadrivencv::build_network_logo(CV$entries_data)}
+```
+
+
+```{r}
+if(params$pdf_mode){
+  cat("View this CV online with links at ",urlString)
+} else {
+  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](",urlString,")")
+}
+```
+
+**Contact** {#contact}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %>% print_contact_info()
+```
+
+
+
+
+
+<!-- Disclaimer {#disclaimer} -->
+<!-- -------------------------------------------------------------------------------- -->
+
+<!-- Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). -->
+
+<!-- The source code is available [on github.com/blabbree/CV](https://github.com/blabbree/CV). -->
+
+<!-- Last updated on `r Sys.Date()`. -->
+
+
+
+<!-- Main -->
+<!-- ================================================================================ -->
+
+Brandon P. Labbree {#title}
+--------------------------------------------------------------------------------
+
+_**`r format(Sys.time(), '%B %d, %Y %I:%M:%S %p')`**_
+
+```{r}
+
+# Note the special double pipe so we modify the CV object in place
+CV %<>% print_text_block("intro") 
+```
+
+
+
+**Education** {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('education')
+```
+
+
+
+**Research Experience** {data-icon=laptop}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('research_positions')
+```
+
+
+
+<!-- Industry Experience {data-icon=suitcase} -->
+<!-- -------------------------------------------------------------------------------- -->
+
+<!-- ::: aside -->
+<!-- ```{r} -->
+<!-- CV %<>% print_text_block('industy_experience_aside') -->
+<!-- ``` -->
+<!-- ::: -->
+
+<!-- ```{r} -->
+<!-- CV %<>% print_section('industry_positions') -->
+<!-- ``` -->
+
+<!-- These breaks just force a new page so section doesnt get cut off -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+
+**Teaching Experience** {data-icon=chalkboard-teacher}
+--------------------------------------------------------------------------------
+
+<!-- ::: aside -->
+<!-- ```{r} -->
+<!-- CV %<>% print_text_block('teaching_experience_aside') -->
+<!-- ``` -->
+<!-- ::: -->
+
+```{r}
+CV %<>% print_section('teaching_positions')
+```
+
+
+
+<!-- Selected Data Science Writing {data-icon=chart-line} -->
+<!-- -------------------------------------------------------------------------------- -->
+
+<!-- ::: aside -->
+<!-- ```{r} -->
+<!-- CV %<>% print_text_block('data_science_writing_aside') -->
+<!-- ``` -->
+<!-- ::: -->
+
+<!-- ```{r} -->
+<!-- CV %<>% print_section('data_science_writings') -->
+<!-- ``` -->
+
+
+
+<!-- Selected Press (About)  {data-icon=newspaper} -->
+<!-- -------------------------------------------------------------------------------- -->
+
+<!-- ```{r} -->
+<!-- CV %<>% print_section('about_me_press') -->
+<!-- ``` -->
+
+
+<!-- <br> -->
+<!-- <br> -->
+
+
+<!-- Selected Press (By)  {data-icon=newspaper} -->
+<!-- -------------------------------------------------------------------------------- -->
+
+<!-- ```{r} -->
+<!-- CV %<>% print_section('by_me_press') -->
+<!-- ``` -->
+
+
+
+**Selected Manuscripts, Publications, and Posters** {data-icon=book}
+--------------------------------------------------------------------------------
+
+<!-- Manuscripts in Preparation {data-icon=pencil-square} -->
+<!-- -------------------------------------------------------------------------------- -->
+<!-- ```{r} -->
+<!-- CV %<>% print_section('academic_manuscripts') -->
+<!-- ``` -->
+
+_Manuscripts Under Review or Revision_ {data-icon=file-text}
+--------------------------------------------------------------------------------
+```{r}
+CV %<>% print_section('academic_underreview')
+```
+
+
+_Published Publications_ {data-icon=institution}
+--------------------------------------------------------------------------------
+```{r}
+CV %<>% print_section('academic_articles')
+```
+
+_Posters_ {data-icon=columns}
+--------------------------------------------------------------------------------
+```{r}
+CV %<>% print_section('academic_presentations')
+```
+
+**Honors and Awards** {data-icon=star}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('honors_awards')
+```
+
+
+**Memberships** {data-icon=users}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('professional_memberships')
+```
+
+**Services** {data-icon=tasks}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('professional_services')
+```
+
+```{r}
+CV %<>% print_links()
+```
+
+<!-- These breaks just force a new page so section doesnt get cut off -->
+
+**Technical and Research Skills** {#skills}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %>% print_skill_bars()
+```
+
+
+\pagebreak
+
+References {data-icon=users}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_references()
+```
