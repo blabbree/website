@@ -1,6 +1,5 @@
 ---
 title: "Brandon P. Labbree"
-email-obfuscation: javascript
 ---
 
 

@@ -4,3 +4,7 @@ title: "CV"
 
 # **COPY OF CV COMING SOON** {.personalheading}
 
+
+
+
+{{< pdf https://github.com/blabbree/CV/blob/main/PDF/Labbree_CV_20240319.pdf >}}
